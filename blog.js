@@ -2,7 +2,6 @@
  * https://github.com/christkv/node-mongodb-native
  * http://expressjs.com/
  * https://github.com/visionmedia/haml.js
- * http://howtonode.org/express-mongodb
  */
 var sys     = require("sys");
 var mongodb = require("mongodb");

@@ -2,8 +2,13 @@
   %h2.title
     %a{href : "/posts/" + post._id + "/", title : post.title}= post.title
   .post-info-top
-    %span.post-info-date Posted by zzzhc on YYYY-MM-dd
+    %span.post-info-date Posted by zzzhc 
+    %span.post-info-edit
+      %a{href : "/posts/" + post._id + "/edit"} Edit
+    %span.post-info-delete
+      %a{href : "/posts/" + post._id, "data-method" : "delete"} Delete
     %span#gotocomments
       %a{href : "/posts/" + post._id + "/#respond"} No comments
   .clear
-  .entry= post.content
+  .entry
+    != post.content

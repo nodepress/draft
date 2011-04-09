@@ -39,9 +39,15 @@ hr{display:none;}
 #sidebar-border,#sidebar,
 .sticky,
 #commentform textarea,
+#postform textarea,
 .page-title,.page-title h1,
 #header_image,#header_image_border{-moz-border-radius:6px;-webkit-border-radius:6px;border-radius:6px;}
-#author,#email,#url,#submit{-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
+#postform label {
+  width: 50px;
+}
+#author,#email,#url,#submit,
+#title
+{-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
 #menus a{-moz-border-radius:6px 6px 0 0;border-radius:6px 6px 0 0;-webkit-border-radius:6px 6px 0 0;}
 #menus ul ul a{-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;}
 
@@ -119,6 +125,7 @@ h2.title-single{color:#345;}
 .post-info-top a:hover,.post-info-bottom a:hover{color:#4a630f;text-decoration:underline;}
 .entry p.read-more a,.entry p a.more-link,.post-info-date,.post-info-category,.post-info-tags,#gotocomments,#addcomment{display:block;padding-left:20px;background:url("images/icons.gif") no-repeat scroll 0 0;}
 .post-info-date{float:left;background-position:0 -40px;}
+.post-info-edit, .post-info-delete{margin-left: 15px;}
 .post-info-category{display:inline;background-position:-35px -60px;}
 .post-info-tags{display:inline;background-position:-20px -240px;margin-left:10px;}
 #gotocomments{float:right;background-position:0 -100px;margin-right:10px;}
@@ -223,9 +230,16 @@ ol.commentlist li ul.children li div.reply a:hover{background:#fafafa;}
 #commentform p{margin:0 0 10px;padding:0;}
 #commentform p.smilies{margin:0 0 3px;padding:0 3px;}
 #commentform p.comment-notes{margin:10px 0;color:#999;}
-#commentform textarea{padding:3px;background:#fff;border:1px solid #ddd;}
+#commentform textarea, #postform textarea{padding:3px;background:#fff;border:1px solid #ddd;}
+#postform textarea {
+  height: 380px;
+  width: 620px;
+}
+#postform p {
+  margin-bottom: 10px;
+}
 #commentform .comment-form-comment label{display:none;}
-#author,#email,#url{height:16px;margin-right:5px;padding:3px;border:1px solid #ddd;background:#fff;}
+#author,#email,#url,#title{height:16px;margin-right:5px;padding:3px;border:1px solid #ddd;background:#fff;}
 #comment{width:80%;height:125px;}
 #submit{background:#222;font-weight:bold;color:#ccc;height:25px;padding:2px 10px;border:1px solid #555;}
 #submit:hover{color:#fff;}

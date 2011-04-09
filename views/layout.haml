@@ -38,3 +38,14 @@
                 - each post in posts
                   %li
                     %a{title : post.title, href : "/posts/" + post._id + "/"}= post.title
+          #meta-2.widget
+            %h3.widgettitle Meta
+            %ul
+              %li
+                %a{title : "add new post", href : "/posts/new"} Add New Post
+    .clear
+    #footer
+      #footer-inside
+        %p
+          Copyright&nbsp;&copy;&nbsp;2011&nbsp;zzzhc's blog &nbsp;|&nbsp;Theme 
+          %a{title : "designed by zwwooooo", href : "http://zww.me"} zBench
