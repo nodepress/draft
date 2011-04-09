@@ -1,0 +1,9 @@
+.post
+  %h2.title
+    %a{href : "/posts/" + post._id + "/", title : post.title}= post.title
+  .post-info-top
+    %span.post-info-date Posted by zzzhc on YYYY-MM-dd
+    %span#gotocomments
+      %a{href : "/posts/" + post._id + "/#respond"} No comments
+  .clear
+  .entry= post.content

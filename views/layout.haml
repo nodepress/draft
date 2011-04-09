@@ -1,0 +1,40 @@
+!!!
+%html
+  %head
+    %link{rel: "stylesheet", type : "text/css", media : "all", href : "/stylesheets/application.css"}
+    %script{script : "text/javascript", src : "http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"}
+    %script{script : "text/javascript", src : "/javascripts/application.js"}
+  %body.home.blog
+    #nav
+      #menus
+        %ul
+          %li
+            %a{href : "/"} Home
+      #search
+        %form#searchform{action : "/search", method : "get"}
+          %input#s{name : "s", maxlength : "50", size : "35",  value : "Search: type, hit enter"}
+          %input#searchsubmit{type : "submit", value : "SEARCH"}
+    #wrapper
+      #header
+        %h1
+          %a{href : "/"} zzzhc's blog
+        %h2 stay curious
+        .clear
+      %hr
+      #content
+        != body
+      #sidebar-border
+        #rss
+          %a{title : "RSS Feed", rel : "nofollow", href : "/feed/"} RSS Feed
+        #sidebar
+          #search-2.widget.widget_search
+            %form#searchform{action : "/search", method : "get"}
+              %input#s{name : "s", maxlength : "50", size : "35",  value : "Search: type, hit enter"}
+              %input#searchsubmit{type : "submit", value : "SEARCH"}
+          #recent-posts-2.widget.widget_recent_entries
+            %h3.widgettitle Recent Posts
+            %ul
+              - if ("undefined" != typeof posts)
+                - each post in posts
+                  %li
+                    %a{title : post.title, href : "/posts/" + post._id + "/"}= post.title

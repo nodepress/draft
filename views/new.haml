@@ -1,0 +1,9 @@
+%form{method: "POST", action: "/posts/"}
+  %label title
+  %input{name : "title", size : "40", value : post.title}
+  %br
+  %label content
+  %textarea{name : "content"}= post.content || ""
+  %br
+  %input{type : "submit", value : "submit"}
+
