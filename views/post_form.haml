@@ -1,0 +1,9 @@
+%form{id: "postform", action: (post.id ? "/posts/" + post.id : "/posts/"), method: "post"}
+  %p
+    %label title
+    %input{name: "title", value: post.title}
+  %p
+    %label content
+    %textarea{name: "content"}= post.content ? post.content : ""
+  %p
+    %input{type: "submit", value: "Save"}

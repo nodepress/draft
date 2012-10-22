@@ -1,8 +1,3 @@
-/**
- * https://github.com/christkv/node-mongodb-native
- * http://expressjs.com/
- * https://github.com/visionmedia/haml.js
- */
 var sys     = require("sys");
 var mongodb = require("mongodb");
 var Db = mongodb.Db,
@@ -22,11 +17,11 @@ app.configure(function(){
 });
 
 app.configure('development', function(){
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
 app.configure('production', function(){
-  app.use(express.errorHandler()); 
+  app.use(express.errorHandler());
 });
 
 var dbPool = [];
@@ -36,7 +31,7 @@ function getDB() {
   var port = 27017;
   var db = dbPool.shift();
   if (db == null) {
-    db = new Db('blog', new Server(host, port, {}), {native_parser:true});
+    db = new Db('blog', new Server(host, port, {}), {native_parser:false, safe: false});
   }
   return db;
 }
@@ -170,5 +165,5 @@ app.delete(/\/posts\/(\w{24,})\/?$/, function(req, res) {
 });
 
 app.listen(3000);
-
+console.log('Listening on port 3000');
 
